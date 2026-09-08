@@ -1,10 +1,12 @@
+#set enum(numbering: "a.")
+
 #set page(
   paper: "us-letter",
   margin: (top: 2.5in),
   header: [
     #grid(
       columns: (1fr, 1fr),
-      image("ecelogo.png", height: 0.8in),
+      image("images/ecelogo.png", height: 0.8in),
       align(right)[
         Dillon Gutowski \
         9/7/2026 \
@@ -57,22 +59,26 @@
 == Pre-Lab Questions
 
 === Part 1: Boolean algebra simplification
-+ $F = A * B + A * nt(B) + nt(A) * B$
-  - Order of operations: $F = (A * B) + (A * nt(B)) + (nt(A) * B$)
-  - Inverse distribution: $F = A*(nt(B) + B) + (nt(A) * B)$
-  - Inverse: $F = A*1 + (nt(A) * B)$
-  - Identity: $F = A + (nt(A) * B)$
-  - Distribution: $F = (A + nt(A))*(A + B)$
-  - Inverse: $F = 1 * (A+B)$
-  - Identity: $F = A+B$
++ $F = A * B + A * nt(B) + nt(A) * B$\
+  #pad(0.5em)[
+    $F = (A * B) + (A * nt(B)) + (nt(A) * B$) #h(1fr)Order of  operations\
+    $F = A*(nt(B) + B) + (nt(A) * B)$ #h(1fr)Inverse  distribution\
+    $F = A*1 + (nt(A) * B)$ #h(1fr) Inverse\
+    $F = A + (nt(A) * B)$ #h(1fr) Identity\
+    $F = (A + nt(A))*(A + B)$ #h(1fr) Distribution\
+    $F = 1 * (A+B)$ #h(1fr) Inverse\
+    $F = A+B$ #h(1fr) Identity\
+  ]
 + $Z = nt(V) W + X + nt(Y)(X + nt(V) W)$
-  - Commutation: $Z = X + nt(V)W + (X + nt(V)W)nt(Y)$
-  - Association: $Z = (X + nt(V)W) + (X + nt(V)W)nt(Y)$
-  - Absorption: $Z = X + nt(V)W$
-
+  #pad(0.5em)[
+    $Z = X + nt(V)W + (X + nt(V)W)nt(Y)$ #h(1fr) Commutation\
+    $Z = (X + nt(V)W) + (X + nt(V)W)nt(Y)$ #h(1fr) Association\
+    $Z = X + nt(V)W$ #h(1fr) Absorption\
+  ]
+#pagebreak()
 === Part 2: Implementation
-[TODO]
-
+#table(columns: (0.1fr, 1fr, 1fr), align: center + horizon, table.header([], [Unsimplified], [Simplified]), [F], image("images/A.png"), image("images/AS.png"), [Z], image("images/Z.png"), image("images/ZS.png"))
+#pagebreak()
 === Part 3: Security system design
 #let truth_table(columns, ..cells) = {
   let table_cells = columns + cells.pos().map(val => {
@@ -86,8 +92,7 @@
   })
   text(font: "JetBrainsMono NF", table(columns: columns.len(), ..table_cells))
   }
-+ Truth table:
-  #truth_table(
++ #truth_table(
     ("D", "W", "M", "A", "S"),
     0, 0, 0, table.vline(stroke: 3pt + gray), 0, 1,
     0, 0, 1, 1, 1,
@@ -115,4 +120,7 @@
   Simplify:
   - De Morgan's: $nt(D W) + M$
   *So, $S = nt(D W) + M$*
-
+  #colbreak()
++ Implementation:
+  #image("images/sec.png")
+  Note that the two circuits are combined.
