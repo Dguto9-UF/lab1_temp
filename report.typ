@@ -101,21 +101,25 @@ The content of this lab is extremely relevant to describing decision-making algo
   )
 + $A(D, W, M) = Sigma_(m)(1, 3, 5) = nt(D)nt(W)M + nt(D)W M + D nt(W)M$\
   Simplify:
-  - Inverse distribution: $nt(D)(nt(W)M + W M) + D nt(W)M$
-  - Commutation: $nt(D)(M nt(W) + M W) + D nt(W)M$
-  - Inverse distribution: $nt(D)(M (nt(W) + W)) + D nt(W)M$
-  - Inverse: $nt(D)(M dot 1) + D nt(W)M$
-  - Identity: $nt(D)M + D nt(W)M$
-  - Inverse distribution: $M(nt(D) + D nt(W))$
-  - Distribution: $M((nt(D) + D)(nt(D)+nt(W)))$
-  - Inverse: $M(1 dot (nt(D)+nt(W))$
-  - Identity: $M(nt(D)+nt(W))$
-  - De Morgan's: $M nt(D W)$
+  #pad(0.5em)[
+    $nt(D)(nt(W)M + W M) + D nt(W)M$ #h(1fr) Inverse distribution\
+    $nt(D)(M nt(W) + M W) + D nt(W)M$ #h(1fr) Commutation\
+    $nt(D)(M (nt(W) + W)) + D nt(W)M$ #h(1fr) Inverse distribution\
+    $nt(D)(M dot 1) + D nt(W)M$ #h(1fr) Inverse\
+    $nt(D)M + D nt(W)M$ #h(1fr) Identity\
+    $M(nt(D) + D nt(W))$ #h(1fr) Inverse distribution\
+    $M((nt(D) + D)(nt(D)+nt(W)))$ #h(1fr) Distribution\
+    $M(1 dot (nt(D)+nt(W))$ #h(1fr) Inverse\
+    $M(nt(D)+nt(W))$ #h(1fr) Identity\
+    $M nt(D W)$ #h(1fr) De Morgan's\
+  ]
   *So, $A = M nt(D dot W)$*
 + $S(D, W, M) = Pi_(m)(6) = nt(D) + nt(W) + M$\
   Simplify:
-  - De Morgan's: $nt(D W) + M$
-  *So, $S = nt(D W) + M$*
+  #pad(0.5em)[
+    $nt(D W) + M$ #h(1fr) De Morgan's\
+  ]
+  *So, $S = nt(D dot W) + M$*
   #colbreak()
 + Implementation:
   #image("images/sec.png")
