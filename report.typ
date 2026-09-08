@@ -40,17 +40,13 @@
 
 = Lab 1: Basic Logic Design
 == Requirements Not Met
-
-[Insert any requirements you were unable to meet, for whatever reason. If none, write N/A.]
+N/A
 
 == Problems Encountered
-
-[Summarize all issues you had while working on this lab.]
+Getting Logisim to run was difficult; it would not open until I restarted my computer. I also struggled to install Quartus and Questa on Arch Linux.
 
 == Applications
-
-[Briefly describe potential applications of the content you learned in this lab.]
-
+The content of this lab is extremely relevant to describing decision-making algorithms with digital signals. Any digital system that combines multiple inputs uses logical gates like these to do so; they are the basis of digital computing. The FPGA portion is also very applicable, as FPGAs are used widely in DSP, to manipulate data at high rates via the programmable circuitry.
 
 #pagebreak()
 
@@ -116,7 +112,7 @@
   - Identity: $M(nt(D)+nt(W))$
   - De Morgan's: $M nt(D W)$
   *So, $A = M nt(D dot W)$*
-+ $S(D, W, M) = Pi_(s)(6) = nt(D) + nt(W) + M$\
++ $S(D, W, M) = Pi_(m)(6) = nt(D) + nt(W) + M$\
   Simplify:
   - De Morgan's: $nt(D W) + M$
   *So, $S = nt(D W) + M$*
